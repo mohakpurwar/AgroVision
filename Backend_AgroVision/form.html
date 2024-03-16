@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Desk</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #172a31;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #3fc060;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        /* Styled file input */
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-upload-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            /* Center the child elements horizontally */
+            align-items: center;
+            /* Center the child elements vertically */
+            flex-direction: column;
+            /* Stack the child elements vertically */
+        }
+
+        .file-upload-button {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            padding: 12px 20px;
+            /* Add padding to the button */
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .file-upload-button:hover {
+            background-color: #45a049;
+        }
+
+        .file-upload-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background-color: #048654;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .file-upload-container:hover .file-upload-label {
+            background-color: #45a049;
+        }
+
+        img {
+            max-width: 70%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .nocursor {
+            cursor: none;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+
+            img {
+                margin-bottom: 16px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Order Form</h2>
+
+    <form action="(according_to_coder)" method="POST" id="gsheet">
+        <input type="hidden" value="" name="fileContent" id="fileContent">
+          <input type="hidden" value="" name="filename" id="filename">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Agro Vision" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="agrovision@gmail.com" required>
+
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="0123456789" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" placeholder="112, S-block, Meerut" required></textarea>
+
+        <label for="order">What's Your Query?</label>
+        <textarea id="order" name="order" rows="4" placeholder="Need Help With Fertilizer"
+            required></textarea>
+
+        <img src="plant.jpg" alt="query">
+     
+        <label for="file">Upload Your Query:</label>
+        <div class="file-upload-container">
+            <label class="file-upload-label" for="file">Choose File</label>
+            <input type="file" id="file" name="file" onchange="myFunction()" required>
+            <img src="" alt="">
+            <div class="file-upload-button">Choose File</div>
+        </div>
+        <textarea class="nocursor" id="demo" disabled></textarea>
+
+
+        <input type="submit" value="Submit" onclick="UploadFile()">
+    </form>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("file");
+            var txt = "";
+            if ('files' in x) {
+                if (x.files.length == 0) {
+                    txt = "Select one or more files.";
+                } else {
+                    for (var i = 0; i < x.files.length; i++) {
+                        txt += (i + 1) + ". file";
+                        var file = x.files[i];
+                        if ('name' in file) {
+                            txt += "name: " + file.name + "";
+                        }
+                        if ('size' in file) {
+                            txt += "size: " + file.size + " bytes ";
+                        }
+                    }
+                }
+            }
+            else {
+                if (x.value == "") {
+                    txt += "Select one or more files.";
+                } else {
+                    txt += "The files property is not supported by your browser!";
+                    txt += "The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+                }
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+
+
+
+
+        function UploadFile() {
+    var reader = new FileReader();
+    var file = document.getElementById('file').files[0];
+    reader.onload = function(){
+    document.getElementById('fileContent').value=reader.result;
+    document.getElementById('filename').value=file.name;
+    document.getElementById('gsheet').submit();
+    }
+    reader.readAsDataURL(file);
+    }
+
+ 
+    </script>
+
+</body>
+
+</html>

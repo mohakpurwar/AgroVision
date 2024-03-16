@@ -1,0 +1,126 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* stylying for header */
+header {
+    text-align: center;
+    background-color: #24142c;
+    color: white;
+}
+
+/* stying for search aside */
+input {
+    width: 100%;
+}
+
+button {
+    margin-top: 8px;
+    width: 100%;
+    background-color: #748cf1;
+    border: none;
+}
+
+span {
+    display: block;
+    width: 100%;
+    margin: 13px;
+    margin-left: 0px;
+    border-bottom: solid lightgray 1.5px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding-left: 0px;
+    width: 100%;
+}
+
+aside li {
+    text-align: center;
+    background-color: #d9cedb;
+    margin-bottom: 15px;
+}
+
+aside ul li:hover {
+    color: white;
+    cursor: default;
+}
+
+/* styling for current forecast box */
+.current,
+.five-day {
+    visibility: hidden;
+}
+
+.current {
+    width: 100%;
+    border: solid #3e3b51 1px;
+    padding: 5px;
+}
+
+.currentHeader {
+    display: flex;
+    background-color: #3e3b51;
+    color: white;
+}
+
+.current h4 {
+    padding-left: 16px;
+    margin-top: 8px;
+}
+
+.current img {
+    max-width: 50px;
+    height: auto;
+    padding-left: 10px;
+}
+
+.current ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.current .l1,
+.current .l2 {
+    border-bottom-color: white;
+}
+
+/* styling for 5-day forecast cards */
+.five-day {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card-header {
+    background-color: white;
+    color: #3e3b51;
+    border-bottom: none;
+}
+
+.c1,
+.c2,
+.c3,
+.c4 {
+    margin-right: 5px;
+}
+
+.five-day .list-group-item {
+    background-color: #abaed3;
+}
+
+.five-day .l1,
+.five-day .l2,
+.five-day .l3 {
+    border-bottom-color: #abaed3;
+    ;
+}
+
+.icon1,
+.icon2,
+.icon3,
+.icon4,
+.icon5 {
+    max-width: 50px;
+    height: auto;
+    text-align: center;
+}

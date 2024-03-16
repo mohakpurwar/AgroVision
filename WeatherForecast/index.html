@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap css  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Forecaster</title>
+</head>
+
+<body>
+    <!-- title header -->
+    <header class="container-fluid m-3">
+        <h1>AgroSense Weather</h1>
+    </header>
+
+    <section class="container-fluid m-3">
+        <div class="row">
+            <!-- aside for search bar -->
+            <aside class="col-12 col-md-4 col-lg-3">
+                <h4>Search for a City:</h4>
+                <input placeholder="City Name Here">
+                <button>Search</button>
+                <span></span>
+                <ul></ul>
+            </aside>
+
+            <div class="col-12 col-md-8 col-lg-9">
+                <!-- current weather forecast -->
+                <div class="current">
+                    <div class="currentHeader">
+                        <h4></h4>
+                        <img id="icon" />
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item l1"></li>
+                        <li class="list-group-item l2"></li>
+                        <li class="list-group-item l3"></li>
+                    </ul>
+                </div>
+
+                <!-- 5-day forecast cards -->
+                <div class="five-day">
+                    <h5>5-Day Forecast:</h5>
+                    <div class="card-group">
+                        <div class="card c1">
+                            <div class="card-header ch1"></div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item l1"><img class="icon1" /></li>
+                                <li class="list-group-item l2"></li>
+                                <li class="list-group-item l3"></li>
+                                <li class="list-group-item l4"></li>
+                            </ul>
+                        </div>
+
+                        <div class="card c2">
+                            <div class="card-header ch2"></div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item l1"><img class="icon2" /></li>
+                                <li class="list-group-item l2"></li>
+                                <li class="list-group-item l3"></li>
+                                <li class="list-group-item l4"></li>
+                            </ul>
+                        </div>
+
+                        <div class="card c3">
+                            <div class="card-header ch3"></div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item l1"><img class="icon3" /></li>
+                                <li class="list-group-item l2"></li>
+                                <li class="list-group-item l3"></li>
+                                <li class="list-group-item l4"></li>
+                            </ul>
+                        </div>
+
+                        <div class="card c4">
+                            <div class="card-header ch4"></div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item l1"><img class="icon4" /></li>
+                                <li class="list-group-item l2"></li>
+                                <li class="list-group-item l3"></li>
+                                <li class="list-group-item l4"></li>
+                            </ul>
+                        </div>
+
+                        <div class="card c5">
+                            <div class="card-header ch5"></div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item l1"><img class="icon5" /></li>
+                                <li class="list-group-item l2"></li>
+                                <li class="list-group-item l3"></li>
+                                <li class="list-group-item l4"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- dayJS -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+
+    <!-- bootstrap js bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
